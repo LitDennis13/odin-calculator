@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#calculator-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#display {
+    background-color: lightblue;
+    text-align: right;
+    height: 100px;
+
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 470px;
+    width: 375px;
+    gap:5px;
+    background-color: lightblue;
+}
+
+#calculator-button {
+    font-size: 50px;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+#calculator-button.zero {
+    width: 185px;
+}
+
+
