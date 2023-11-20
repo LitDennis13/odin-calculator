@@ -34,13 +34,26 @@ body {
 #buttons {
     display: flex;
     flex-wrap: wrap;
-    height: auto;
-    width: 435px;
-    gap:5px;
+    gap: 5px;
     background-color: lightblue;
     border: 4px solid black;
-
+    
 }
+
+#non-operation-buttons,#operation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap:5px;
+    height: auto;
+    width: 325px;
+}
+#operation-buttons {
+    width: 105px;
+}
+#non-operation-buttons {
+    width: 325px;
+}
+
 
 #calculator-button {
     font-size: 50px;
@@ -52,4 +65,7 @@ body {
     width: 215px;
 }
 
+.selected {
+    background-color: red;
+}
 
