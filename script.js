@@ -6,16 +6,27 @@ let nonOppButtons = document.querySelector("#non-operation-buttons");
 
 
 let removedZero = false;
-
+let reset = false;
 
 nonOppButtons.addEventListener("click", function(event) {
     let target = event.target;
-    
+    if (equalSignPressed === true) {
+        clear();
+        equalSignPressed = false;
+    }
+    if (reset) {
+        display.textContent = "0";
+        removedZero = false;
+        highlightSeclected("none");
+        reset = false;
+    }
     if (target.textContent === "0" && display.textContent === "0") {
+        typed = true;
         return;
     }
 
     else if (listOfNumbers.includes(+target.textContent)) {
+        typed = true;
         removeZero();
         display.textContent += target.textContent;
     }
@@ -53,10 +64,13 @@ function clear() {
     removedZero = false;
     display.textContent = "0";
     expression = {
-        firstNumber: 0,
-        secondNumber: 0,
+        firstNumber: "none",
+        secondNumber: "none",
         operation: "+"
     };
+    
+    
+    highlightSeclected("none");
 }
 
 function plus_minus() {
@@ -64,7 +78,7 @@ function plus_minus() {
         display.textContent = "0";
         removedZero = false;
     }
-    else if (display.textContent.includes("-")) {
+    else if (display.textContent.charAt(0) === "-") {
         display.textContent = display.textContent.substring(1);
     }
     else {
