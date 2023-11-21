@@ -49,11 +49,10 @@ oppButtons.addEventListener("click", function(event) {
             highlightSeclected("none");
             equalSignPressed = true;
             break;
-        
-
     }
-    
 });
+
+
 
 function setNumbers() {
     if (expression.firstNumber === "none") {
