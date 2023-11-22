@@ -21,11 +21,13 @@ nonOppButtons.addEventListener("click", function(event) {
         reset = false;
     }
     if (target.textContent === "0" && display.textContent === "0") {
+        highlightSeclected("none");
         typed = true;
         return;
     }
 
     else if (listOfNumbers.includes(+target.textContent)) {
+        highlightSeclected("none");
         typed = true;
         removeZero();
         display.textContent += target.textContent;
